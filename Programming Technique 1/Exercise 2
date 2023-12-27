@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+	int num, digit, sum;
+	cout << "Enter an integer number: " ;
+	cin >> num;
+	
+	while (num != 0)
+	{
+		digit = num % 10;
+		sum += digit;
+		cout << digit;
+		num /=10;
+		if (num != 0)
+			cout << "+" ;
+		else
+			cout << "=" << sum << "\n";		
+	}
+	
+	if (sum % 2)
+		cout << sum << " is odd number";
+	else
+		cout << sum << " is even number";
+	
+	if (sum % 3 == 0) 
+        cout << " & a multiples of 3";
+
+	if (sum % 4 == 0) 
+   {
+   		if (sum % 3 == 0)
+            cout << " and 4";
+        else
+            cout << " & a multiples of 4";
+   }
+
+    if (sum % 5 == 0) 
+	{
+        if ((sum % 3 == 0) || (sum % 4 == 0))
+            cout << " and 5";
+        else 
+            cout << " & a multiples of 5";
+    }
+    
+	return 0;
+
+}
