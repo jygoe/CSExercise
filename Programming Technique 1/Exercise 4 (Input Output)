@@ -1,1 +1,100 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+
+void readFile(double F[], int& nums);
+void computeC(const double F[], double C[], int nums);
+double average(const double num[], int size);
+char grade(double C);
+void writeFile(const double F[], const double C[], int nums);
+
+int main()
+{
+	double F[10];
+	double C[10];
+	int nums=0, i=0, h=0, m=0, l=0;
+	
+	readFile(F, nums);
+	computeC(F, C, nums);
+	
+	double sum = 0;
+    double avg = average(C, nums);
+    
+    for (int i = 0; i < nums; ++i)
+	{
+		sum += C[i];
+    if (C[i] >= 35)
+		h++;
+	else if (C[i] < 35 && C[i] >= 20)
+		m++;
+	else
+		l++;
+	}
+	
+	cout << fixed << setprecision(1);
+    cout << "Average Celsius: " << avg << endl;
+    cout << "Number of high temperature: " << h << endl; 
+	cout << "Number of medium temperature: " << m << endl;
+	cout << "Number of low temperature: " << l << endl ;
+
+	writeFile(F, C, nums);
+
+	return 0;
+} 
+
+void readFile(double F[], int& nums)
+{
+	fstream infile("input.txt", ios::in);
+	nums=0;
+	while (infile >> F[nums])
+		++nums;
+		
+	infile.close();
+}
+
+void computeC(const double F[], double C[], int nums)
+{
+	for (int i = 0; i < nums; ++i) 
+	{
+        C[i] = (5.0 / 9.0) * (F[i] - 32);
+    }
+}
+
+double average(const double num[], int size)
+{
+	double sum=0;
+	
+	for (int i = 0; i < size; ++i) 
+	{
+        sum += num[i];
+	}
+	return sum / size;
+}
+
+char grade(double C)
+{
+	if (C >= 35)
+		return 'H';
+	else if (C < 35 && C >= 20)
+		return 'M';
+	else
+		return 'L';
+}
+
+void writeFile(const double F[], const double C[], int nums)
+{
+	fstream outfile("output.txt", ios::out);
+	outfile << left << setw(12) << "C(Celsius)" << setw(15) << "F(Fahrenheit)" << setw(13) << "Description" << endl;
+    outfile << "==========  =============  ===========" << endl;
+
+    for (int i = 0; i < nums; ++i)
+    {
+        char tempGrade = grade(C[i]);
+        outfile << fixed << setprecision(2) << left << setw(15) << C[i] << setw(15) << F[i] << setw(15) << tempGrade << endl;
+    }
+    outfile.close();
+}
+
 
