@@ -3,13 +3,6 @@
 </h1>
 <b><i>  Welcome to see all my Year 1 Semester 1's Project here~</i></b
 
-* 🌍  I'm based in Kluang, Johor
-* 📫  You can contact me at [goeying@graduate.utm.my](mailto:goeying@graduate.utm.my)
-* 🖥️  See my portfolio at [MyPortfolio](http://jieying.com)
-* 💻  I'm currently a freshman studying for Bachelor of Computer Science (Data Engineering)
-* 📖  I’m interested in reading and learning
-
-
 ### Subject
 * 👩‍💻 SECP1513 TEKNOLOGI DAN SISTEM MAKLUMAT (TECHNOLOGY AND INFORMATION SYSTEM)
 * 💻 SECJ1013 TEKNIK PENGATURCARAAN I (PROGRAMMING TECHNIQUE I)
