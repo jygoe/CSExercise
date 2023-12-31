@@ -1,7 +1,8 @@
 <h1 align="center">
   Jie Ying's ePortfolio
 </h1>
-<b><i>  Welcome to see all my Year 1 Semester 1's Project here~</i></b
+<b><i>  Welcome to see all my Year 1 Semester 1's Project here~</i></b>
+
 
 ### Subject
 * 👩‍💻 SECP1513 TEKNOLOGI DAN SISTEM MAKLUMAT (TECHNOLOGY AND INFORMATION SYSTEM)
