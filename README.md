@@ -1,7 +1,3 @@
-<div id="header" align="center">
-<img src="https://media.giphy.com/media/a1QLZUUtCcgyA/giphy.gif" width="300"/>
-</div>
-
 <h1 align="center">
   Jie Ying's ePortfolio
 </h1>
