@@ -1,4 +1,3 @@
-Coming soon...
 <div id="header" align="center">
 <img src="https://media.giphy.com/media/a1QLZUUtCcgyA/giphy.gif" width="300"/>
 </div>
