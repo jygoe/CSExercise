@@ -1,3 +1,8 @@
+// Goe Jie Ying A23CS0224
+// Lam Yoke Yu A23CS0233
+// Assignment 2 Set 2
+// 15/11/2023
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
