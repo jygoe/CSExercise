@@ -1,0 +1,97 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void getInput(int &s1, int &s2, int &s3);
+void dispTier(int total_marks);
+double calcAverage(int studentnum, double total_avrg);
+void dispSummary(int &total_marks);  // Pass total_marks by reference
+
+int main() {
+    int s1, s2, s3, total_marks, studentnum = 0;
+    int lowest, highest;
+    double total_avrg = 0;
+
+    do {
+        string name;
+
+        cout << "<<<<<<<<<<<<<< DATA >>>>>>>>>>>>>" << endl;
+        cout << "Name   : ";
+		cin.ignore();
+		getline(cin,name);
+		
+        if (name.empty()) {
+            break;
+        }
+
+        getInput(s1, s2, s3);
+
+        total_marks = static_cast<int>((s1 / 100.0 * 35) + (s2 / 100.0 * 25) + (s3 / 100.0 * 40));
+        total_avrg += total_marks;
+
+        if (studentnum == 0) {
+            lowest = highest = total_marks;
+        } else {
+            if (total_marks < lowest) {
+                lowest = total_marks;
+            }
+            if (total_marks > highest) {
+                highest = total_marks;
+            }
+        }
+
+        dispSummary(total_marks);
+        studentnum++;
+    } while(cin.get() == '\n');
+    cout << endl << "<<<<<<<< RESULTS ANALYSIS >>>>>>>>" << endl;
+    cout << "Lowest mark : " << lowest << endl;
+    cout << "Highest mark: " << highest << endl;
+    cout << "Average for " << studentnum << " students: " << calcAverage(studentnum, total_avrg) << endl;
+
+    return 0;
+}
+
+//Task 1
+void getInput(int &s1, int &s2, int &s3){
+    do {
+        cout << "Q1 mark: ";
+        cin >> s1;
+    } while (s1 < 0 || s1 > 100);
+    
+    do {    
+        cout << "Q2 mark: ";
+        cin >> s2;
+    } while (s2 < 0 || s2 > 100);
+    
+    do {
+        cout << "Q3 mark: ";
+        cin >> s3;    
+    } while (s3 < 0 || s3 > 100);
+}
+
+//Task 2
+void dispTier(int total_marks){
+    cout << "Total Marks: " << total_marks << endl;
+    
+    if (total_marks >=75 && total_marks <=100)
+        cout << left << setw(11) << "Tier" << ": Tier 1";
+    else if (total_marks < 75 && total_marks >= 40)
+        cout << left << setw(11) << "Tier" << ": Tier 2";
+    else
+        cout << left << setw(11) << "Tier" << ": Tier 3";
+}
+
+//Task 3
+double calcAverage(int studentnum, double total_avrg){
+    if (studentnum == 0){
+        return 0;
+    }
+    return static_cast<double>(total_avrg) / studentnum;
+}
+
+void dispSummary(int &total_marks){
+    cout << "<<<<<<<<<<<<< SUMMARY >>>>>>>>>>>" << endl;
+    cout << "Total marks: " << total_marks << endl;
+    dispTier(total_marks);    
+    cout << endl;
+}
